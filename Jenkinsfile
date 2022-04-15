@@ -7,6 +7,11 @@ pipeline {
         dockerImage = ''
     }
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Tests') {
             steps {
                 echo 'Building..'
